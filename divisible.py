@@ -49,17 +49,19 @@ tic = time.perf_counter()
 i = 10
 upTo = input("Number to check to: ")
 while(i <= int(upTo)):
-    divisions = str(i) + " - "
+    divisions = str(i) + " - 1"
     if(i % 2 == 0):
-        divisions = divisions + "2"
+        divisions = divisions + ", 2"
     if(DigitSum(i) % 3 == 0):
         divisions = divisions + ", 3"
-    if(("2" in divisions) & ("3" in divisions)):
-        divisions = divisions + ", 6"
     if(checkFour(i)):
         divisions = divisions + ", 4"
     if(int(str(i)[-1]) == 0 or int(str(i)[-1]) == 5):
         divisions = divisions + ", 5"
+    if(("2" in divisions) & ("3" in divisions)):
+        divisions = divisions + ", 6"
+    if(i % 7 == 0):
+        divisions = divisions + ", 7"
     if(checkEight(i)):
         divisions = divisions + ", 8"
     if(DigitSum(i) % 9 == 0):
